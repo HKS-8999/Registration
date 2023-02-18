@@ -5,8 +5,6 @@ import {
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-
-
 export default function RegistrationForm() {
     const toast = useToast()
     const navigate = useNavigate();
@@ -74,7 +72,7 @@ export default function RegistrationForm() {
                 position: 'top'
             });
             console.log
-            navigate("/profile", { state: { firstName: formData.firstName, lastName: formData.lastName } });
+            navigate("/profile", { state: { firstName: formData.firstName, lastName: formData.lastName , email: formData.email} });
 
         } else {
             setFormErrors(errors);

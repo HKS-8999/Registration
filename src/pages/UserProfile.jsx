@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function UserProfile() {
     const location = useLocation();
-    const { firstName, lastName } = location.state
+    const { firstName, lastName, email } = location.state
     console.log(location.state)
     return (
 
@@ -28,6 +28,10 @@ export default function UserProfile() {
                     <HStack>
                         <Text fontSize='xl' as='b'>Last Name: </Text>
                         <Text fontSize='xl' as='i'>{lastName} </Text>
+                    </HStack>
+                    <HStack>
+                        <Text fontSize='xl' as='b'>Email: </Text>
+                        <Text fontSize='xl' as='i'>{email} </Text>
                     </HStack>
                 </VStack>
             </Box>
