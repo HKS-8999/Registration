@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function RegistrationForm() {
     const toast = useToast()
     const navigate = useNavigate();
+    const [isFormValid, setIsFormValid] = useState(false);
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -28,6 +29,13 @@ export default function RegistrationForm() {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
         setFormErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+        if(formData.firstName.length !== 0 &&
+            formData.lastName.length !== 0 &&
+            formData.email.length !== 0 &&
+            formData.password.length !== 0 &&
+            formData.confirmPassword.length !== 0){
+                setIsFormValid(true);
+            }
     };
 
     const handleSubmit = (e) => {
@@ -150,7 +158,7 @@ export default function RegistrationForm() {
                         <Text color="red.400">{formErrors.confirmPassword}</Text>
                     </FormControl>
 
-                    <Button type="submit" colorScheme="yellow" > Submit
+                    <Button type="submit" colorScheme="yellow" isDisabled={!isFormValid} > Submit
                     </Button>
                 </VStack>
             </form>
