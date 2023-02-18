@@ -1,2 +1,2 @@
 # Registration
-User Registration and User Profile Page in Vite + React using ChakraUI.
+User Registration and User Profile Page in Vite + React using ChakraUI. User will register themselves by inputting valid First Name, Last Name, Email, Password, Confirm Password with all the validations. As the user clicks the Submit button by entering all valid details it will show a success notification and user will be redirected to his Profile page where their First Name and Last Name will be displayed.
