@@ -57,7 +57,7 @@ export default function RegistrationForm() {
             errors.password =
                 "Password should be at least 8 characters long and contain a combination of uppercase letters, lowercase letters, numbers, and special characters.";
         }
-        if (formData.confirmPassword !== formData.password) {
+        else if (formData.confirmPassword !== formData.password) {
             errors.confirmPassword = "Passwords do not match.";
         }
 
